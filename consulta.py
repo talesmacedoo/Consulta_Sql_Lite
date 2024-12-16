@@ -2,7 +2,7 @@ import sqlite3
 
 class Consulta():
     def __init__(self, telefone):
-        self.caminho_banco =  r'\\server-mkt\DOC.DIGITAIS\CPD_B.I\arquivo de dados\telefones_maktub.db'
+        self.caminho_banco =  r'caminho_banco'
         self.telefone_consulta = telefone
 
 

@@ -3,7 +3,7 @@ import sqlite3
 from time import sleep
 
 # Caminho para a pasta local do db
-caminho_banco = r'C:\Users\MAKTUB-CPD\Desktop\01SCPT\Teste_sql_lite\banco_de_dados.db'
+caminho_banco = r'caminho-banco'
 
 
 conexao = sqlite3.connect(caminho_banco)
