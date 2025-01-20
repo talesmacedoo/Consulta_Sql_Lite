@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 # Defina o caminho para a pasta compartilhada na rede
-caminho_banco = r'C:\Users\MAKTUB-CPD\Desktop\01SCPT\Teste_sql_lite\banco_de_dados.db'
+caminho_banco = r'C:\Users\TI-02\Desktop\01SCPT\Consulta_Sql_Lite - Copia\banco_info_maktub.db'
 
 # Verifique se o caminho da pasta existe
 if not os.path.exists(os.path.dirname(caminho_banco)):
@@ -16,9 +16,17 @@ else:
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        convenio TEXT,
         nome TEXT,
         cpf TEXT,
-        telefone TEXT
+        telefone1 TEXT,
+        telefone2 TEXT,
+        telefone3 TEXT,
+        telefone4 TEXT,
+        email TEXT,
+        data_nascimento TEXT,
+        data_obito TEXT,
+        data_consulta TEXT                                                                       
     )
     ''')
 
