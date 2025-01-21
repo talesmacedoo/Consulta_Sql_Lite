@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 # Defina o caminho para a pasta compartilhada na rede
-caminho_banco = r'C:\Users\TI-02\Desktop\01SCPT\Consulta_Sql_Lite - Copia\banco_info_maktub.db'
+caminho_banco = r'C:\caminho_para_o_banco.db'
 
 # Verifique se o caminho da pasta existe
 if not os.path.exists(os.path.dirname(caminho_banco)):
@@ -25,7 +25,7 @@ else:
         telefone4 TEXT,
         email TEXT,
         data_nascimento TEXT,
-        data_obito TEXT,
+        obito TEXT,
         data_consulta TEXT                                                                       
     )
     ''')
