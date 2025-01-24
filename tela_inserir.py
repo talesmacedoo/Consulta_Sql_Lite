@@ -8,8 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from tkinter import*
 from tkinter import messagebox
-import os
-import threading
+#import os
+#import threading
 from tkinter import filedialog
 import customtkinter
 import pandas as pd
@@ -30,7 +30,7 @@ class Janela(customtkinter.CTk):
 
         # configure window
         self.title("LuzirSoftware.py")
-        self.geometry(f"{490}x{610}")
+        self.geometry(f"{490}x{500}")
         self.resizable(False,False)
 
         # configure grid layout (4x4)
@@ -40,26 +40,26 @@ class Janela(customtkinter.CTk):
                             
 
         #Campanha     
-        self.detalhamento_frame = customtkinter.CTkFrame(self)
-        self.detalhamento_frame.grid(row=0, column=1, padx=10, pady=17, sticky="nsew")
-        self.label_campanha = customtkinter.CTkLabel(master=self.detalhamento_frame, text="INSERIR BASE", font=("Roboto", 14))
+        self.base_frame = customtkinter.CTkFrame(self)
+        self.base_frame.grid(row=0, column=1, padx=10, pady=17, sticky="nsew")
+        self.label_campanha = customtkinter.CTkLabel(master=self.base_frame, text="INSERIR BASE", font=("Roboto", 14))
         self.label_campanha.grid(row=0, column=0, columnspan=1, padx=20, pady=20, sticky="n")         
-        #self.nomeCam = customtkinter.CTkEntry(master=self.detalhamento_frame, placeholder_text="Nome da Campanha:", width=350)
+        #self.nomeCam = customtkinter.CTkEntry(master=self.base_frame, placeholder_text="Nome da Campanha:", width=350)
         #self.nomeCam.grid(row=1, column=0, padx=10, pady=20)       
-        self.caminho_arquivo = customtkinter.CTkLabel(master=self.detalhamento_frame, text="Arquivo")
+        self.caminho_arquivo = customtkinter.CTkLabel(master=self.base_frame, text="Arquivo")
         self.caminho_arquivo.grid(row=3, column=0, padx=0, pady=0)
-        self.browse_file = customtkinter.CTkButton(master=self.detalhamento_frame, command=self.browseFilesTel, text="Arquivo")
+        self.browse_file = customtkinter.CTkButton(master=self.base_frame, command=self.browseFilesTel, text="Arquivo")
         self.browse_file.grid(row=4, column=0, padx=0, pady=0)  
-        self.textbox_arquivo = customtkinter.CTkTextbox(master=self.detalhamento_frame, width=260, height=150)
+        self.textbox_arquivo = customtkinter.CTkTextbox(master=self.base_frame, width=430, height=200)
         self.textbox_arquivo.grid(row=5, column=0, padx=20, pady=10)                 
 
-     #Envio
-        self.envio_frame = customtkinter.CTkFrame(self)
-        self.envio_frame.grid(row=1, column=1, columnspan=2, padx=10, pady=0, sticky="nsew")
-        self.btn_iniciar = customtkinter.CTkButton(master=self.envio_frame, command=self.validador, text="Iniciar")
-        self.btn_iniciar.grid(row=0, column=0, padx=110,pady=10, sticky="nsew")        
-        self.btn_sair = customtkinter.CTkButton(master=self.envio_frame, command=self.destroy, text="Sair", fg_color="red")
-        self.btn_sair.grid(row=1, column=0, padx=110,pady=10, sticky="nsew")
+     #Inserir
+        self.inserir_frame = customtkinter.CTkFrame(self)
+        self.inserir_frame.grid(row=1, column=1, columnspan=2, padx=10, pady=0, sticky="n")
+        self.btn_inserir = customtkinter.CTkButton(master=self.inserir_frame, command=self.validador, text="Inserir")
+        self.btn_inserir.grid(row=0, column=0, padx=110,pady=10, sticky="n")        
+        self.btn_sair = customtkinter.CTkButton(master=self.inserir_frame, command=self.destroy, text="Sair", fg_color="red")
+        self.btn_sair.grid(row=1, column=0, padx=110,pady=10, sticky="n")
 
      #Configurações  
         self.textbox_arquivo.configure(state="disabled") 
